@@ -1,10 +1,11 @@
 from telegram import Update
+from telegram.ext import ContextTypes
 
 from app.logger import logger
 from app.state import authorized_groups
 
 
-async def start_command(update: Update):
+async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):  # noqa
     """Handles the /start command"""
 
     chat_id = update.effective_chat.id
